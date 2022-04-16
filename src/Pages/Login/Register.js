@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
+import SocialLogin from './SocialLogin';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -17,14 +18,15 @@ const Register = () => {
     }
     return (
         <div className='form-container'>
-            <h2 style={{ textAlign: 'center' }}>Please Register</h2>
+            <h2  style={{ textAlign: 'center' }}>Please Register</h2>
             <form onSubmit={handleRegister}>
                 <input type="text" name="name" id="" placeholder='Enter Your Name' required />
                 <input type="email" name="email" id="" placeholder='Enter Your Email' required />
                 <input type="password" name="password" id="" placeholder='Enter Your Password' required />
-                <input type="submit" value="Register" />
+                <input className='bg-info border-0 rounded' type="submit" value="Register" />
                 <p>Already Have an Account? <Link to='/login' className='text-danger text-decoration-none' onClick={navigateLogin}>Login</Link></p>
             </form>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
